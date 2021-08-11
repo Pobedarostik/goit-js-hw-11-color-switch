@@ -27,6 +27,7 @@ const timer = {
     }
 
     this.isActive = true;
+    refs.btnStart.setAttribute("disabled", "disabled");
     this.switchColors = setInterval(() => {
       const min = 0;
       const max = colors.length - 1;
@@ -37,6 +38,7 @@ const timer = {
   stop() {
     clearInterval(this.switchColors);
     this.isActive = false;
+    refs.btnStart.removeAttribute("disabled", "disabled");
   },
 };
 
